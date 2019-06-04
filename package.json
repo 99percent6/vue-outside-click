@@ -1,0 +1,22 @@
+{
+  "name": "vue-outside-click",
+  "version": "0.1.0",
+  "description": "Directive for VueJS, handle click outside target element",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/99percent6/vue-outside-click.git"
+  },
+  "keywords": [
+    "vue",
+    "click",
+    "outside",
+    "directive"
+  ],
+  "author": "Zeynalov Vladimir (99percent6)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/99percent6/vue-outside-click/issues"
+  },
+  "homepage": "https://github.com/99percent6/vue-outside-click#readme"
+}
