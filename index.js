@@ -2,17 +2,22 @@ function isServer () {
   return typeof window === 'undefined'
 }
 
-export const clickOutside = {
-  bind: function (el, binding, vNode) {
+exports = module.exports = {
+  bind: function (el, binding) {
     function handler (event) {
-      let isMenuClick = false
-      let { target } = event
-      const cb = binding.value.handler
-      const elementId = binding.value.elId
+      var isMenuClick = false
+      var { target } = event
+      var cb = binding.value.handler
+      var additionalIds = binding.value.additionalIds || []
 
-      for (let i = 0; i <= 10; i++) {
+      if (!cb) {
+        console.error('Handler is reuqired for vue-outside-click')
+        return
+      }
+
+      for (var idx = 0; idx <= 20; idx++) {
         if (target) {
-          if (el.isEqualNode(target) || target.id === elementId) {
+          if (el.isEqualNode(target) || additionalIds.includes(target.id)) {
             isMenuClick = true
             break
           }
