@@ -28,7 +28,17 @@ or
       Content
   </div>
 </template>
+
+also
+(calls handler as soon as posible)
+<template>
+  <div v-outside-click.immediate="{} | Function" class="example">
+      Content
+  </div>
+</template>
+
 ```
+
 
 ```
 <script>
