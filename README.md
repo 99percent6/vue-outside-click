@@ -21,6 +21,16 @@ $ yarn add vue-outside-click
   </div>
 </template>
 
+or
+
+<template>
+  <div v-outside-click="hideMenu" class="example">
+      Content
+  </div>
+</template>
+```
+
+```
 <script>
 import outsideClick from 'vue-outside-click'
 

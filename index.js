@@ -7,12 +7,21 @@ exports = module.exports = {
     function handler (event) {
       var isMenuClick = false
       var { target } = event
-      var cb = binding.value.handler
-      var additionalIds = binding.value.additionalIds || []
+      let cb;
+      let additionalIds;
 
-      if (!cb) {
-        console.error('Handler is reuqired for vue-outside-click')
-        return
+      if(typeof binding.value === "object" && "handler" in binding.value && typeof binding.value.handler === "function"){
+        cb = binding.value.handler;
+        if("additionalIds" in binding.value && Array.isArray(binding.value.additionalIds) && binding.value.length > 0){
+          additionalIds = binding.value.additionalIds;
+        } else {
+          additionalIds = [];
+        }
+      } else if(typeof binding.value === "function"){
+        cb = binding.value;
+      } else {
+        console.error("[VUE-OUTSIDE-CLICK] you must pass either a function or an object with { handler: Function } to vue-outside-click directive");
+        return;
       }
 
       for (var idx = 0; idx <= 20; idx++) {
